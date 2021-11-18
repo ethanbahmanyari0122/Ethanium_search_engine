@@ -15,11 +15,11 @@ export const ResultContextProvider = ({ children }) => {
         setIsLoading( true);
 
         const response = await fetch(`${baseUrl}${type}`, {
-            method: 'Get',
+            method: 'GET',
             headers: {
                 'x-rapidapi-host': 'google-search1.p.rapidapi.com',
                 'x-rapidapi-key': '472f58a7edmsha4265f5d786161dp1b5e3djsn89d3add5c915'
-            },
+            }
         });
         const data = await response.json();
 
