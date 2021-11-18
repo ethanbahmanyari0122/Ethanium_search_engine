@@ -14,6 +14,7 @@ const Navbar = ({darkTheme,setDarkTheme})=>{
                     {darkTheme? "Light 🌕": "Dark 🌑"}
                 </button>
             </div>
+            <Search/>
         </div>
     );
 };
