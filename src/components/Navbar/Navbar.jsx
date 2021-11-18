@@ -10,7 +10,7 @@ const Navbar = ({darkTheme,setDarkTheme})=>{
                         Ethanium 👨🏻‍💻
                     </p>
                 </Link>
-                <button type="button" onClick={()=> setDarkTheme(!darkTheme)} className="text-xl dark:bg-gray-70 dark:text-gray-800 bg-blue-200 rounded-full px-2 py-1 hover:shadow-lg ">
+                <button type="button" onClick={()=> setDarkTheme(!darkTheme)} className="text-xl dark:bg-gray-70 dark:text-gray-800 bg-blue-100 rounded-full px-2 py-1 hover:shadow-lg ">
                     {darkTheme? "Light 🌕": "Dark 🌑"}
                 </button>
             </div>
