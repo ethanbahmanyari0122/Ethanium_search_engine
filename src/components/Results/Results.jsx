@@ -3,6 +3,7 @@ import {useLocation} from 'react-router-dom';
 import ReactPlayer from "react-player";
 
 import {useResultContext} from "../../contexts/ResultContextProvider";
+import Loading from "../Loading/Loading";
 
 
 const Results = () =>{
@@ -11,11 +12,13 @@ const Results = () =>{
 
     if(isLoading) return <Loading/>;
 
-    return(
-        <div>
-            REsults
-        </div>
-    );
+    switch (location.pathname) {
+        case '/search':
+            return 'Search';
+        default:
+            return 'Error!';
+
+    }
 };
 
 export default Results;
