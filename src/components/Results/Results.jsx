@@ -14,7 +14,21 @@ const Results = () =>{
 
     switch (location.pathname) {
         case '/search':
-            return 'Search';
+            return (
+
+            );
+        case '/images':
+            return (
+
+            );
+        case '/videos':
+            return (
+
+            );
+        case '/news':
+            return (
+
+            );
         default:
             return 'Error!';
 
