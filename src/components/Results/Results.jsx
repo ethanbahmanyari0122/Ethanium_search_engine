@@ -7,7 +7,7 @@ import Loading from "../Loading/Loading";
 
 
 const Results = () =>{
-    const { results, isLoading, getResults, searchTerm} = useResultContext();
+    const { results: { results, image_results, entries: news}, isLoading, getResults, searchTerm} = useResultContext();
     const location = useLocation();
 
     useEffect(()=>{
@@ -26,7 +26,7 @@ const Results = () =>{
         case '/search':
             return (
                 <div className="flex flex-wrap justify-between space-y-6 sm:px-56">
-                    {results?.results?.map(({link, title}, index)=>(
+                    {results?.map(({link, title}, index)=>(
                         <div key={index} className="md:w-2/5 w-full">
                             <a href={link} target="_blank" rel="noreferrer">
                                 <p className="text-sm">
@@ -43,7 +43,7 @@ const Results = () =>{
         case '/images':
             return (
                 <div className="flex flex-wrap justify-center items-center">
-                    {results?.image_results?.map(({image, link: {href, title}}, index)=>(
+                    {image_results?.map(({image, link: {href, title}}, index)=>(
                         <a className="sm:p-3 p-5" href={href} key={index} target="_blank" rel="noreferrer">
                             <img src={image?.src} alt={title} loading="lazy"/>
                             <p className="w-36 break-words text-sm mt-2">
@@ -73,7 +73,7 @@ const Results = () =>{
         case '/news':
             return (
                 <div className="flex flex-wrap justify-between space-y-6 sm:px-56 items-center">
-                    {results?.entries?.map(({links, id, source, title})=>(
+                    {news?.map(({links, id, source, title})=>(
                         <div key={id} className="md:w-2/5 w-full">
                             <a href={links?.[0].href} target="_blank" rel="noreferrer" className="hover:underline">
                                 <p className="text-lg  dark:text-blue-300 text-blue-700">
