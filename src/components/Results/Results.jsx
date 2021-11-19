@@ -11,7 +11,13 @@ const Results = () =>{
     const location = useLocation();
 
     useEffect(()=>{
-        getResults('q=elon musk&num=40')
+        if(searchTerm){
+            if(location.pathname === '/videos'){
+                getResults(`/search/q=${searchTerm} videos`)
+            } else {
+                getResults(`/${location.pathname}/q=${searchTerm}&num=40`)
+            }
+        }
     },[])
 
     if(isLoading) return <Loading/>;
