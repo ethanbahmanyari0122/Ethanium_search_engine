@@ -11,14 +11,14 @@ modern UI and dark mode.
 
 # Local launch
 
-1. Clone repo: `git clone ` 
-2. 
+1. Clone repo: `git clone https://github.com/ethanbahmanyari0122/Ethanium_search_engine.git` 
+
 3. `cd ethanium_search_engine`
-4. 
+
 5. Install dependencies with `yarn` or `npm install`
-6. 
+
 7. Check your `localhost:3000`, must be working
-8. 
+
 
 ---
 
