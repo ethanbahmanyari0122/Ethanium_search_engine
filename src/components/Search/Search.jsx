@@ -6,7 +6,7 @@ import {useResultContext} from "../../contexts/ResultContextProvider";
 
 const Search = ()=>{
     const [text, setText] = useState('Elon Musk');
-    const [setSearchTerm] = useResultContext();
+    const {setSearchTerm} = useResultContext();
     const [debouncedValue] = useDebounce(text, 300);
 
     useEffect(()=>{
@@ -14,7 +14,7 @@ const Search = ()=>{
     },[debouncedValue])
 
     return(
-        <div className="relative sm:ml-48 md:ml-72 sm:mt-10 mt-3">
+        <div className="relative sm:ml-48 md:ml-72 sm:-mt-10 mt-3">
             <input value={text}
             type={text}
             className="sm:w-96 w-80 h-10 dark:bg-gray-200 border rounded-full shadow-sm outline-none p-6 text-black hover:shadow-lg"

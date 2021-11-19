@@ -15,7 +15,7 @@ const Results = () =>{
             if(location.pathname === '/videos'){
                 getResults(`/search/q=${searchTerm} videos`)
             } else {
-                getResults(`/${location.pathname}/q=${searchTerm}&num=40`)
+                getResults(`${location.pathname}/q=${searchTerm}&num=40`)
             }
         }
     },[searchTerm, location.pathname]);
@@ -58,7 +58,7 @@ const Results = () =>{
                 <div className="flex flex-wrap">
                     {results.map((video, index) => (
                         <div key={index} className="p-2">
-                            <ReactPlayer url={video.additional_links?.[0].href} controls width="355px" height="200px"/>
+                            {video?.additional_links?.[0]?.href && <ReactPlayer url={video.additional_links?.[0].href} controls width="355px" height="200px"/>}
                         </div>
                     ))}
                 </div>
